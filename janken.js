@@ -17,11 +17,23 @@ function janken(user) {
     let pcImg = document.getElementById("pcImg");
     // 検索したimgタグのsrc属性に該当するファイル名を設定
     pcImg.src = "img/" + pcJankens[pc];
-
     // ユーザから見た勝敗結果(文字列)を2次元配列に保存
     let result = [['あいこ', '勝ち', '負け'],
-                  ['負け', 'あいこ', '勝ち'],
-                  ['勝ち', '負け', 'あいこ']];
+    ['負け', 'あいこ', '勝ち'],
+    ['勝ち', '負け', 'あいこ']];
     // 勝敗結果を
-       document.getElementById("result").textContent = result[user][pc];
-             }
+    if (result[user][pc] == '勝ち') {
+        hideJanken();
+        window.setTimeout(goWinPage, 2000);
+    }
+    document.getElementById("result").textContent = result[user][pc];
+}
+
+function goWinPage() {
+    window.location.href = 'win.html';
+}
+
+function hideJanken() {
+    document.getElementById("janken").style.display = `none`;
+
+}
