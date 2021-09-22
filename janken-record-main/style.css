@@ -54,8 +54,11 @@ td2 img{
   height:120px;
 }
 
-.p{
-	position:relative;
-  top: -500px;
-  left: 800px;
+#result{
+position:absolute;
+ font-weight: bold;
+  top: 545px;
+  left: 1000px;
+  color: #000;
+  z-index: 100;
 }
